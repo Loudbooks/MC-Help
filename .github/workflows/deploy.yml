@@ -12,9 +12,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
-    - name: List directory
-      run: ls .
         
     - name: Deploy new files
       uses: fjogeleit/http-request-action@v1
