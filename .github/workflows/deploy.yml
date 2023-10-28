@@ -12,11 +12,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name: List directory
+      run: ls .
+        
     - name: Deploy new files
       uses: fjogeleit/http-request-action@v1
       with:
         url: 'https://mc.loudbook.dev/'
         method: 'POST'
         customHeaders: '{"token": "${{ secrets.HTTPTOKEN }}", "Content-Type": "application/json"}'
-        file: '{ "file": "${{ github.workspace }}/links.txt" }'
+        file: '{ "file": "/links.txt" }'
