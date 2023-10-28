@@ -8,3 +8,4 @@
 "launcherlogs":"https://minecrafthopper.net/help/guides/getting-minecraft-launcher-log/"
 "hjt":"https://minecrafthopper.net/help/hjt/"
 "feedback":"https://feedback.minecraft.net/hc/en-us/community/posts/new"
+"optialt":"https://fabricmc.net/wiki/optifine-alternatives"
