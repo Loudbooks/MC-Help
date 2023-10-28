@@ -10,3 +10,4 @@
 "feedback":"https://feedback.minecraft.net/hc/en-us/community/posts/new"
 "optialt":"https://fabricmc.net/wiki/community:optifine_alternatives"
 "dlfail":"https://bugs.mojang.com/browse/MCL-23025"
+"moddedmc":"https://discord.gg/moddedmc"
