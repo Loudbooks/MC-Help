@@ -6,3 +6,6 @@ You can access these redirects at **https://mc.loudbook.dev/[key]**
 
 ### Format: "key":"link"
 Example: `"mc":"https://minecraft.net"`
+
+
+Check out the [webserver](https://github.com/Loudbooks/LoudbookWebServer) for some insight on how it all works!
