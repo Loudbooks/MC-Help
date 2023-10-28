@@ -19,4 +19,4 @@ jobs:
         url: 'https://mc.loudbook.dev/'
         method: 'POST'
         customHeaders: '{"token": "${{ secrets.HTTPTOKEN }}", "Content-Type": "application/json"}'
-        files: '{ "file": "links.txt" }'
+        file: '{ "file": "links.txt" }'
