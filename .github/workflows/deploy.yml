@@ -1,0 +1,23 @@
+name: Deploy Links
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy new files!
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://mc.loudbook.dev/'
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{"token": "${{ secrets.HTTPTOKEN }}"}'
+        files: '{ "file": "links.txt" }'
