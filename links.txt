@@ -2,6 +2,7 @@
 "mc":"https://minecraft.net"
 "hosts":"https://minecrafthopper.net/help/hosts-file/"
 "cleaner":"https://downloads.malwarebytes.com/file/adwcleaner"
+"adwc":"https://downloads.malwarebytes.com/file/adwcleaner"
 "curselogs":"https://support.curseforge.com/en/support/solutions/articles/9000218900-how-to-get-your-curseforge-logs"
 "logs":"https://minecrafthopper.net/help/guides/getting-minecraft-game-output-log/index.html"
 "changegpu":"https://minecrafthopper.net/help/amd-dedicated-gpu/"
