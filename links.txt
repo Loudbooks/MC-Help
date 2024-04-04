@@ -13,3 +13,4 @@
 "dlfail":"https://bugs.mojang.com/browse/MCL-23025"
 "moddedmc":"https://discord.gg/moddedmc"
 "incompatsoft":"https://minecrafthopper.net/help/known-incompatible-software/"
+"dxd":"https://minecrafthopper.net/help/dxdiag/"
