@@ -5,5 +5,5 @@ This script is used to gather log files from Minecraft from various launchers to
 All output is uploaded to [PasteBook](https://pastebook.dev), and other users will be able to view these logs at the [PasteBook Panel](https://pastebook.dev/panel).
 
 ## Usage (Windows Only)
-1. Download the latest version here: https://github.com/Loudbooks/MC-Help/releases/download/log-parser-v1.0/logparser.bat
-2. Double click the file
+1. Download the latest version [here](https://github.com/Loudbooks/MC-Help/releases/latest/download/logparser.bat).
+2. Double click the file.
