@@ -8,3 +8,4 @@ All output is uploaded to [PasteBook](https://pastebook.dev), and other users wi
 1. Download the latest version [here](https://github.com/Loudbooks/MC-Help/releases/latest/download/logboot.bat).
 2. Double click the file.
 3. Follow instructions provided.
+4. Once completed, please inform the person who requested this log.
