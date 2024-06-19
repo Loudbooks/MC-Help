@@ -130,10 +130,10 @@ set /a index=1
 for /d %%d in ("%appdata%\PrismLauncher\instances\*") do (
     if !index!==%selected_index% (
         if %log_type%==launcher (
-            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\logs\launcher_log.txt
+            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\.minecraft\logs\launcher_log.txt
             set log_name=Prism Launcher Log ^(%%~nxd^)
         ) else (
-            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\logs\latest.log
+            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\.minecraft\logs\latest.log
             set log_name=Prism Latest Log ^(%%~nxd^)
         )
     )
