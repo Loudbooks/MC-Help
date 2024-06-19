@@ -9,22 +9,6 @@ if "%discord_username%"=="" (
     goto check_username
 )
 
-:check_log_type
-echo.
-echo Confirm your log type:
-echo 1) Latest Log
-echo 2) Launcher Log
-set /p log_type=Enter your choice: 
-
-if "%log_type%"=="1" set log_name=latest
-if "%log_type%"=="2" set log_name=launcher
-
-if not "%log_name%"=="latest" if not "%log_name%"=="launcher" (
-    echo.
-    echo Invalid log type. Please try again.
-    goto check_log_type
-)
-
 :check_launcher_type
 echo.
 echo Confirm your launcher:
@@ -50,6 +34,23 @@ if "%launcher_type%"=="5" goto technic
 
 :official
 setlocal enabledelayedexpansion
+
+:check_log_type
+echo.
+echo Confirm your log type:
+echo 1) Latest Log
+echo 2) Launcher Log
+set /p log_type=Enter your choice: 
+
+if "%log_type%"=="1" set log_name=latest
+if "%log_type%"=="2" set log_name=launcher
+
+if not "%log_name%"=="latest" if not "%log_name%"=="launcher" (
+    echo.
+    echo Invalid log type. Please try again.
+    goto check_log_type
+)
+
 if %log_name%==latest (
     set selected_directory=%appdata%\.minecraft\logs\latest.log
     set log_name=Latest Log
@@ -71,7 +72,7 @@ if %index%==1 (
     echo.
     echo No CurseForge installations found.
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 echo.
@@ -87,13 +88,8 @@ set /p selected_index=Enter the index of the installation you are using:
 set /a index=1
 for /d %%d in ("%homedrive%%homepath%\curseforge\minecraft\Instances\*") do (
     if !index!==%selected_index% (
-        if %log_type%==launcher (
-            set selected_directory=%homedrive%%homepath%\curseforge\minecraft\Instances\%%~nxd\logs\launcher_log.txt
-            set log_name=CurseForge Launcher Log ^(%%~nxd^)
-        ) else (
-            set selected_directory=%homedrive%%homepath%\curseforge\minecraft\Instances\%%~nxd\logs\latest.log
-            set log_name=CurseForge Latest Log ^(%%~nxd^)
-        )
+        set selected_directory=%homedrive%%homepath%\curseforge\minecraft\Instances\%%~nxd\logs\latest.log
+        set log_name=CurseForge Latest Log ^(%%~nxd^)
     )
     set /a index+=1
 )
@@ -112,7 +108,7 @@ if %index%==1 (
     echo.
     echo No Prism installations found.
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 echo.
@@ -129,13 +125,8 @@ set /a index=1
 
 for /d %%d in ("%appdata%\PrismLauncher\instances\*") do (
     if !index!==%selected_index% (
-        if %log_type%==launcher (
-            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\.minecraft\logs\launcher_log.txt
-            set log_name=Prism Launcher Log ^(%%~nxd^)
-        ) else (
-            set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\.minecraft\logs\latest.log
-            set log_name=Prism Latest Log ^(%%~nxd^)
-        )
+        set selected_directory=%appdata%\PrismLauncher\instances\%%~nxd\.minecraft\logs\latest.log
+        set log_name=Prism Latest Log ^(%%~nxd^)
     )
     set /a index+=1
 )
@@ -154,7 +145,7 @@ if %index%==1 (
     echo.
     echo No Modrinth installations found.
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 echo.
@@ -170,13 +161,8 @@ set /p selected_index=Enter the index of the installation you are using:
 set /a index=1
 for /d %%d in ("%appdata%\com.modrinth.theseus\profiles\*") do (
     if !index!==%selected_index% (
-        if %log_type%==launcher (
-            set selected_directory=%appdata%\com.modrinth.theseus\profiles\%%~nxd\logs\launcher_log.txt
-            set log_name=Modrinth Launcher Log ^(%%~nxd^)
-        ) else (
-            set selected_directory=%appdata%\com.modrinth.theseus\profiles\%%~nxd\logs\latest.log
-            set log_name=Modrinth Latest Log ^(%%~nxd^)
-        )
+        set selected_directory=%appdata%\com.modrinth.theseus\profiles\%%~nxd\logs\latest.log
+        set log_name=Modrinth Latest Log ^(%%~nxd^)
     )
     set /a index+=1
 )
@@ -195,7 +181,7 @@ if %index%==1 (
     echo.
     echo No Technic installations found.
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 echo.
@@ -213,13 +199,8 @@ set /a index=1
 
 for /d %%d in ("%appdata%\.technic\modpacks\*") do (
     if !index!==%selected_index% (
-        if %log_type%==launcher (
-            set selected_directory=%appdata%\.technic\modpacks\%%~nxd\logs\launcher_log.txt
-            set log_name=Technic Launcher Log ^(%%~nxd^)
-        ) else (
-            set selected_directory=%appdata%\.technic\modpacks\%%~nxd\logs\latest.log
-            set log_name=Technic Latest Log ^(%%~nxd^)
-        )
+        set selected_directory=%appdata%\.technic\modpacks\%%~nxd\logs\latest.log
+        set log_name=Technic Latest Log ^(%%~nxd^)
     )
     set /a index+=1
 )
@@ -232,14 +213,14 @@ if "%selected_directory%"=="" (
     echo.
     echo Log not found: %selected_directory%
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 if not exist "%selected_directory%" (
     echo.
     echo Log not found: %selected_directory%
     pause
-    goto check_log_type
+    goto check_launcher_type
 )
 
 echo.
