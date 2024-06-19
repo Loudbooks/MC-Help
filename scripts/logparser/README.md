@@ -7,4 +7,4 @@ All output is uploaded to [PasteBook](https://pastebook.dev), and other users wi
 ## Usage (Windows Only)
 1. Download the latest version [here](https://github.com/Loudbooks/MC-Help/releases/latest/download/logparser.bat).
 2. Double click the file.
-3. Follow instructions provided.9
+3. Follow instructions provided.
