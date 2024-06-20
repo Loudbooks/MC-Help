@@ -4,6 +4,7 @@ read -p "Enter your Discord username: " discord_username
 
 while [ -z "$discord_username" ]; do
     echo "Discord username cannot be blank. Please try again."
+    echo
     read -p "Enter your Discord username: " discord_username
 done
 
