@@ -10,15 +10,12 @@ namespace LogInspect.Modules;
 
 [CommandContextType(InteractionContextType.BotDm, InteractionContextType.PrivateChannel, InteractionContextType.Guild)]
 [IntegrationType(ApplicationIntegrationType.UserInstall)]
+// ReSharper disable once UnusedType.Global
 public partial class LogCommandModule : InteractionModuleBase<SocketInteractionContext>
 {
     private static readonly Dictionary<ulong, Paginator> PageMap = new();
     private static readonly McLogInspector McLogInspector = new();
-    
-    public LogCommandModule()
-    {
-    }
-    
+
     [SlashCommand("mclog", "Inspect a Minecraft log file")]
     public async Task LatestAsync(string link, bool ephemeral = true)
     {
@@ -139,12 +136,7 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
             {
                 minecraftVersion = versionLines[0].Split("]").Last().Split(": ").Last();
 
-                var timeCreatedMatch = LatestLogTimeCreatedRegex().Match(lines[0]);
-                
-                if (timeCreatedMatch.Success)
-                {
-                    timeCreated = timeCreatedMatch.Value;
-                }
+                timeCreated = lines[0].Split("]").First().Replace("[", "").Trim();
             }
             else
             {
@@ -213,7 +205,4 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
 
         return string.Join("\n", newLines);
     }
-
-    [GeneratedRegex(@"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}")]
-    private static partial Regex LatestLogTimeCreatedRegex();
 }
