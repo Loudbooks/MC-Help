@@ -136,7 +136,12 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
             {
                 minecraftVersion = versionLines[0].Split("]").Last().Split(": ").Last();
 
-                timeCreated = lines[0].Split("]").First().Replace("[", "").Trim();
+                var timeCreatedMatch = LatestLogTimeCreatedRegex().Match(lines[0]);
+                
+                if (timeCreatedMatch.Success)
+                {
+                    timeCreated = timeCreatedMatch.Value;
+                }
             }
             else
             {
@@ -146,8 +151,7 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
                 {
                     minecraftVersion = versionLines[0].Split("--version, ").Last().Split(", ").First();
                     
-                    var secondLine = lines[1];
-                    timeCreated = secondLine.Split(",").First();
+                    timeCreated = lines[4].Split("]").First().Replace("[", "").Trim();
                 }
             }
             
@@ -205,4 +209,7 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
 
         return string.Join("\n", newLines);
     }
+
+    [GeneratedRegex(@"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}")]
+    private static partial Regex LatestLogTimeCreatedRegex();
 }
