@@ -190,6 +190,17 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
             Console.WriteLine(e);
         }
         
+        if (minecraftVersion == "" && timeCreated == "")
+        {
+            newLines =
+            [
+                "Failed to retrieve log information."
+
+            ];
+
+            return string.Join("\n", newLines);
+        }
+        
         newLines.Add("");
         newLines.Add($"Fatal Errors: `{lines.Count(line => line.Contains("/FATAL"))}`");
         newLines.Add($"Errors: `{lines.Count(line => line.Contains("/ERROR"))}`");
