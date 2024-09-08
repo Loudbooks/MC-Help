@@ -35,16 +35,6 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
             
             var inspectedArray = McLogInspector.InspectWithPages(log.Split("\n"));
             
-            if (inspectedArray.Length == 0)
-            {
-                await ModifyOriginalResponseAsync(properties =>
-                {
-                    properties.Content = "No stacktraces found.";
-                });
-                
-                return;
-            }
-            
             for (var i = 0; i < inspectedArray.Length; i++)
             {
                 inspectedArray[i] = $"""
@@ -69,7 +59,6 @@ public partial class LogCommandModule : InteractionModuleBase<SocketInteractionC
                 var reason = e switch
                 {
                     HttpRequestException => "Failed to fetch log.",
-                    JsonException => "Failed to deserialize HJT flags.",
                     UriFormatException => "Invalid link.",
                     IndexOutOfRangeException => "Failed to inspect due to a malformed link.",
                     _ => "Failed to inspect."

@@ -12,7 +12,7 @@ public class HjtCommandModule : InteractionModuleBase<SocketInteractionContext>
     private static readonly HjtInspector HjtInspector = new();
     
     [SlashCommand("hjt", "Inspect a HiJackThis log file")]
-    public async Task HiJackThisAsync([Summary(description: "The link to the log")] string link, bool ephemeral = true)
+    public async Task HjtAsync([Summary(description: "The link to the log")] string link, bool ephemeral = true)
     {
         await DeferAsync(ephemeral: ephemeral);
         
