@@ -1,2 +1,8 @@
 .DS_Store
 scripts/logbook/node_modules
+loginspect/LogInspect/bin
+loginspect/LogInspect/LogInspect/bin
+loginspect/LogInspect/obj
+loginspect/LogInspect/LogInspect/obj
+loginspect/LogInspect/.idea
+.env
