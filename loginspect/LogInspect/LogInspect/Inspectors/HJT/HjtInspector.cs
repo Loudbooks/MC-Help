@@ -17,6 +17,20 @@ public class HjtInspector : Inspector
             throw new Exception("Failed to deserialize HJT flags");
         }
         
+        if (!File.Exists($"{Program.DataPath}/HjtPatches.json"))
+        {
+            File.WriteAllText($"{Program.DataPath}/HjtPatches.json", "[]");
+        }
+        
+        var patchesJson = File.ReadAllText($"{Program.DataPath}/HjtPatches.json");
+        var patches = JsonSerializer.Deserialize<List<HjtFlag>>(patchesJson);
+        
+        if (patches == null)
+        {
+            throw new Exception("Failed to deserialize HJT patches");
+        }
+        
+        flags.AddRange(patches);
         _flags.AddRange(flags);
     }
     
