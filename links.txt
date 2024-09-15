@@ -15,3 +15,4 @@
 "incompatsoft":"https://minecrafthopper.net/help/known-incompatible-software/"
 "dxd":"https://minecrafthopper.net/help/dxdiag/"
 "lb":"https://github.com/Loudbooks/MC-Help/blob/main/scripts/logbook/README.md"
+"mss":"https://discord.gg/microsoft"
