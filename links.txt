@@ -7,6 +7,7 @@
 "logs":"https://minecrafthopper.net/help/guides/getting-minecraft-game-output-log/index.html"
 "changegpu":"https://minecrafthopper.net/help/amd-dedicated-gpu/"
 "launcherlogs":"https://minecrafthopper.net/help/guides/getting-minecraft-launcher-log/"
+"latestlog":"https://minecrafthopper.net/help/guides/getting-minecraft-latest-log"
 "hjt":"https://minecrafthopper.net/help/hjt/"
 "feedback":"https://feedback.minecraft.net/hc/en-us/community/posts/new"
 "optialt":"https://fabricmc.net/wiki/community:optifine_alternatives"
