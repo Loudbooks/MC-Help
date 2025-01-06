@@ -147,6 +147,6 @@ fi
 
 echo
 echo "Your paste link:"
-curl -H "title: $discord_username's $log_name" -X POST --upload-file "$selected_directory" https://pastebook.dev/api/upload
+curl -H "title: $discord_username's $log_name" -X POST --upload-file "$selected_directory" https://api.pastebook.dev/upload
 echo
 echo "Log uploaded successfully."
